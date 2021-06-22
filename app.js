@@ -42,9 +42,9 @@ require('./config/auth')(passport);
 	//handlebars or template engine
 	app.engine('handlebars', handlebars({defaultLayout:'main'}));
 	app.set('view engine', 'handlebars');
-	//Mongoose
+	//Mongoose 
 	mongoose.Promise = global.Promise;
-	mongoose.connect("mongodb://localhost/blogapp",{ 
+	mongoose.connect("mongodb+srv://mendeleev:KlR4DQvmuE2tWSoq@cluster0.st8xu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{ 
 		useNewUrlParser: true 
 	}).then(()=>{
 		 console.log('MongoDb conectado com sucesso!')

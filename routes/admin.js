@@ -128,7 +128,7 @@ router.get('/postagens/add', eAdmin, (req, res)=>{
 router.post('/postagens/nova', multer(uploadConfig).single("file"), eAdmin, async function(req, res){
     
     var erros = []
-    const { originalname, size, key, location: url = "https://bibioteca-online.herokuapp.com/" } = req.file;
+    const { originalname, size, key, location: url = "" } = req.file;
     if(req.body.categoria == '0'){
         erros.push({texto: 'Categoria inválida, registre uma categoria'})
     }

@@ -1,11 +1,11 @@
 {{#each erros}}
-    <div class="alert alert-danger">{{texto}}</div>   
+<div class="alert alert-danger">{{texto}}</div>
 {{else}}
 {{/each}}
 <h5 class="center ">Nova postagem</h5>
 <div class="card">
     <div class="card-body">
-        <form action="/admin/postagens/nova" method="POST">
+        <form action="/admin/postagens/nova" method="POST" enctype="multipart/form-data">
             <input type="text" name="titulo" placeholder="Titulo da postagem" class="form-control" required>
             <input type="text" name="slug" placeholder="Slug da postagem" class="form-control" required>
             <input type="text" name="descricao" placeholder="Descrição da postagem" class="form-control" required>
@@ -18,6 +18,7 @@
                 <option value="0">Nenhuma categoria registrada</option>
                 {{/each}}
             </select>
+            <input type="file" name="file" id="arquivo" required />
             <button type="submit" class="btn btn-success mt-4">Criar postagem</button>
         </form>
     </div>

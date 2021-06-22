@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const multer = require("multer");
+var uploadConfig = require("../config/multer");
 const mongoose = require('mongoose');
 require('../model/Categoria');
 const Categoria = mongoose.model('categorias');
@@ -32,6 +34,7 @@ router.get('/categorias/add', eAdmin, (req, res)=>{
 router.post('/categorias/nova', eAdmin, (req, res)=>{
     
     var erros = []
+  
 
     if(!req.body.nome || typeof req.body.nome == undefined || req.body.nome == null){
         erros.push({texto: 'Nome inválido!'})
@@ -122,10 +125,10 @@ router.get('/postagens/add', eAdmin, (req, res)=>{
     
 })
 
-router.post('/postagens/nova', eAdmin, (req, res)=>{
+router.post('/postagens/nova', multer(uploadConfig).single("file"), eAdmin, async function(req, res){
     
     var erros = []
-
+    const { originalname, size, key, location: url = "" } = req.file;
     if(req.body.categoria == '0'){
         erros.push({texto: 'Categoria inválida, registre uma categoria'})
     }
@@ -139,10 +142,14 @@ router.post('/postagens/nova', eAdmin, (req, res)=>{
             descricao: req.body.descricao,
             conteudo: req.body.conteudo,
             categoria: req.body.categoria,
-            slug: req.body.slug
+            slug: req.body.slug,
+            imagename: originalname,
+            size,
+            key,
+            url,
         }
      
-        new Postagem(novaPostagem).save().then(()=>{
+         await Postagem(novaPostagem).save().then(()=>{
             req.flash('success_msg', 'Postagem criada com sucesso!')
             res.redirect('/admin/postagens')
         }).catch((err)=>{

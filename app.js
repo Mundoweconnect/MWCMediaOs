@@ -1,4 +1,5 @@
 //Carregando módulos
+require("dotenv").config();
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -42,6 +43,7 @@ require('./config/auth')(passport);
 	//handlebars or template engine
 	app.engine('handlebars', handlebars({defaultLayout:'main'}));
 	app.set('view engine', 'handlebars');
+	app.use("/files", express.static(path.resolve(__dirname, "public", "uploads")));
 	//Mongoose 
 	mongoose.Promise = global.Promise;
 	mongoose.connect("mongodb+srv://mendeleev:KlR4DQvmuE2tWSoq@cluster0.st8xu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{ 

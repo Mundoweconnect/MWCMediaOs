@@ -1,32 +1,41 @@
-<div class="jumbotron">
-    <h5 class="display-4">Bem-vindo ao Blog da Camuenho Edition</h5>
-    <p class="lead">Aillsejirfuwfhpeçw9fskfd</p>
-    <hr class="my-4">
-    <p>iisdj,adsad</p>
-       {{#if user}}
-          
-        {{else}}
-        <p class="lead">
-            <a class="btn btn-primary btb-lg" href="/usuarios/registro" role="button">Crie uma conta</a>
-        </p>
-        {{/if}}
-    
-</div>
-
- <h2>Postagens recentes</h2>
-
-{{#each postagens}}
-    <div class="card">
-        <div class="card-body">
-            <h3>{{titulo}}</h3>
-            <p>{{descricao}}</p>
-            <a href="/postagem/{{slug}}"><button class="btn btn-success">Leia mais</button></a>
-            <hr>
-            <small>categoria: {{categoria.nome}}</small><br>
-            <small>Publicado em {{data}}</small>
+<div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <br><br>
+            <h1 class="header center teal-text text-lighten-2">Aprenda a falar englês online</h1>
+            <div class="row center">
+                <h5 class="header col s12 light">We did most of the heavy provide a default stylings that incorporate
+                    our custom components.</h5>
+            </div>
         </div>
     </div>
-{{else}}
-    <p>Nenhuma Postagem</p>
-{{/each}}
+    <div class="parallax"><img src="/imagem/woman-5474990_1920.jpg" alt="Unsplashed background img 1"></div>
+</div>
 
+<div class="container">
+    <div class="section">
+
+        <!--   Icon Section   -->
+        <div class="row">
+            {{#each postagens}}
+            <div class="col s12 m4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{url}}">
+                        <span class="card-title">{{titulo}}</span>
+                    </div>
+                    <div class="card-content">
+                        <p>{{descricao}}</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">This is a link</a>
+                    </div>
+                </div>
+            </div>
+            {{else}}
+            <p>Nenhuma Postagem</p>
+            {{/each}}
+        </div>
+
+    </div>
+</div>

@@ -1,14 +1,28 @@
-<h5>{{categoria.nome}}</h5>
-{{#each postagens}}
-    <div class="card">
-        <div class="card-body">
-            <h3>{{titulo}}</h3>
-            <p>{{descricao}}</p>
-            <a href="/postagem/{{slug}}"><button class="btn btn-success">Leia mais</button></a>
-            <hr>
-            <small>Publicado em {{data}}</small>
+<div class="container">
+    <h5>categorias: {{categoria.nome}}</h5>
+    <div class="section">
+
+        <!--   Icon Section   -->
+        <div class="row">
+            {{#each postagens}}
+            <div class="col s4 m4">
+                <div class="card small">
+                    <div class="card-image">
+                        <img src="/imagem/book-1283865_1280.jpg">
+                        <span class="card-title">{{titulo}}</span>
+                    </div>
+                    <div class="card-content">
+                        <p>{{descricao}}</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="{{url}}">Ler</a>
+                    </div>
+                </div>
+            </div>
+            {{else}}
+            <p>Nenhum Livro</p>
+            {{/each}}
         </div>
+
     </div>
-{{else}}
-    <p>Nenhuma Postagem</p>
-{{/each}}
+</div>

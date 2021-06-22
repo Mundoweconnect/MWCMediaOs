@@ -1,17 +1,19 @@
-
-{{#each erros}}
+<div class="col s12 m8 container">
+    {{#each erros}}
     <div class="alert alert-danger form-control mt-2">{{texto}}</div>
-{{else}}
-{{/each}}
-<h5 class="center">Crie uma conta</h5>
-<div class="card">
-    <div class="card-body">
-    <form action="/usuarios/registro" method="POST">
-        <input type="text" name="nome" placeholder="Nome completo" required class="form-control">
-        <input type="email" name="email" placeholder="E-mail" required class="form-control">
-        <input type="password" name="senha" placeholder="Senha" required class="form-control">
-        <input type="password" name="senha2" placeholder="Repita a senha" required class="form-control">
-    <button type="submit" class="btn btn-success">Criar Conta</button>
-</form>
+    {{else}}
+    {{/each}}
+    <h5 class="center">Crie uma conta</h5>
+    <div class="card">
+
+        <div class="card-body">
+            <form action="/usuarios/registro" method="POST">
+                <input type="text" name="nome" placeholder="Nome completo" required class="form-control">
+                <input type="email" name="email" placeholder="E-mail" required class="form-control">
+                <input type="password" name="senha" placeholder="Senha" required class="form-control">
+                <input type="password" name="senha2" placeholder="Repita a senha" required class="form-control">
+                <button type="submit" class="btn btn-success">Criar Conta</button>
+            </form>
+        </div>
     </div>
 </div>

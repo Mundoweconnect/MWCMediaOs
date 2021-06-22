@@ -1,15 +1,16 @@
-{{#each erros}}
+<div class="container">
+    {{#each erros}}
     <dvi class="alert alert-danger form-control">{{texto}}</dvi>
-{{else}}
-{{/each}}
-<h4 class="center">Editar Categoria</h4>
-<div class="card">
-    <div class="card-body">
-    <form  action="/admin/categorias/edit" method="POST">
-    <input type="hidden" name="id" value="{{categoria._id}}">
-        <input type="text" name="nome" placeholder="Categoria" class="form-control" value="{{categoria.nome}}">
-        <input type="text" name="slug" placeholder="slug da categoria" class="form-control"value="{{categoria.slug}}">
-        <button type="submit" class="btn btn-success">Editar Categoria</button>
-    </form>
+    {{else}}
+    {{/each}}
+    <h4 class="center">Editar Categoria</h4>
+    <div class="card">
+        <div class="card-body">
+            <form action="/admin/categorias/edit" method="POST">
+                <input type="hidden" name="id" value="{{categoria._id}}">
+                <input type="text" name="nome" placeholder="Categoria" class="form-control" value="{{categoria.nome}}">
+                <button type="submit" class="btn btn-success">Editar Categoria</button>
+            </form>
+        </div>
     </div>
 </div>

@@ -2,14 +2,13 @@
     <div class="section no-pad-bot">
         <div class="container">
             <br><br>
-            <h1 class="header center teal-text text-lighten-2">Aprenda a falar englês online</h1>
+            <h1 class="header center teal-text text-lighten-2">Seja bem vindo a bibioteca</h1>
             <div class="row center">
-                <h5 class="header col s12 light">We did most of the heavy provide a default stylings that incorporate
-                    our custom components.</h5>
+                <h5 class="header col s12 light">Senta-se avontade para aprender</h5>
             </div>
         </div>
     </div>
-    <div class="parallax"><img src="/imagem/woman-5474990_1920.jpg" alt="Unsplashed background img 1"></div>
+    <div class="parallax"><img src="/imagem/library-979896_1920.jpg" alt="Unsplashed background img 1"></div>
 </div>
 
 <div class="container">
@@ -18,22 +17,22 @@
         <!--   Icon Section   -->
         <div class="row">
             {{#each postagens}}
-            <div class="col s12 m4">
-                <div class="card">
+            <div class="col s12 m4 l4">
+                <div class="card small">
                     <div class="card-image">
-                        <img src="{{url}}">
+                        <img src="/imagem/book-1283865_1280.jpg">
                         <span class="card-title">{{titulo}}</span>
                     </div>
                     <div class="card-content">
                         <p>{{descricao}}</p>
                     </div>
                     <div class="card-action">
-                        <a href="#">This is a link</a>
+                        <a href="{{url}}">Ler</a>
                     </div>
                 </div>
             </div>
             {{else}}
-            <p>Nenhuma Postagem</p>
+            <p>Nenhum Livro</p>
             {{/each}}
         </div>
 

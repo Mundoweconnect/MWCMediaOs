@@ -53,7 +53,7 @@ router.post('/categorias/nova', eAdmin, (req, res)=>{
     }else{
         const novaCategoria = {
             nome: req.body.nome,
-            slug: req.body.slug
+            slug: req.body.nome
         }
         new Categoria(novaCategoria).save().then(()=>{
             req.flash('success_msg', 'Categoria criada com sucesso!')
@@ -80,7 +80,7 @@ router.post('/categorias/edit', eAdmin, (req, res)=>{
     Categoria.findOne({_id: req.body.id}).then((categoria)=>{
         
         categoria.nome = req.body.nome
-        categoria.slug = req.body.slug
+        categoria.slug = req.body.nome
 
         categoria.save().then(()=>{
             req.flash('success_msg', 'Categoria editada com sucesso!')
@@ -140,9 +140,8 @@ router.post('/postagens/nova', multer(uploadConfig).single("file"), eAdmin, asyn
         const novaPostagem = {
             titulo:req.body.titulo,
             descricao: req.body.descricao,
-            conteudo: req.body.conteudo,
             categoria: req.body.categoria,
-            slug: req.body.slug,
+            slug: req.body.titulo,
             imagename: originalname,
             size,
             key,
@@ -178,9 +177,8 @@ router.get('/postagens/edit/:id', eAdmin, (req, res)=>{
 router.post('/postagens/edit', eAdmin, (req, res)=>{
     Postagem.findOne({_id:req.body.id}).then((postagem)=>{
         postagem.titulo = req.body.titulo
-        postagem.slug = req.body.slug
+        postagem.slug = req.body.titulo
         postagem.descricao = req.body.descricao
-        postagem.conteudo = req.body.conteudo
         postagem.categoria = req.body.categoria
         postagem.save().then(()=>{
             req.flash('success_msg', 'Postagem editada com sucesso!')

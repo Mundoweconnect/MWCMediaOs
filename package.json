@@ -1,5 +1,5 @@
 {
-  "name": "myApp",
+  "name": "mwcmidia",
   "version": "1.1.0",
   "main": "app.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "dev": "nodemon app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Laurindo Camuenho",
   "license": "ISC",
   "dependencies": {
     "aws-sdk": "^2.736.0",
@@ -34,5 +34,13 @@
     "sequelize": "^5.8.6"
   },
   "devDependencies": {},
-  "description": ""
+  "description": "Media Blog Noticias",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mundoweconnect/MWCMediaOs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Mundoweconnect/MWCMediaOs/issues"
+  },
+  "homepage": "https://github.com/Mundoweconnect/MWCMediaOs#readme"
 }

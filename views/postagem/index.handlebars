@@ -1,9 +1,30 @@
-<div class="card">
-    <div class="card-body">
-        <h1>{{postagem.titulo}}</h1>
-        <hr>
-        <small>Data de publicação: {{postagem.data}}</small>
-        <hr>
-        {{postagem.conteudo}} 
+<main>
+
+    <h2 class="page-heading">Post Heading</h2>
+    <div id="post-container">
+      <section id="blogpost">
+        <div class="card">
+          <div class="card-meta-blogpost">
+            Posted by Admin on {{postagem.createdAt}} in
+            <a href="#">MWCMidia</a>
+          </div>
+          <div class="card-image">
+            <img src={{postagem.url}} alt="Card Image">
+          </div>
+          <div class="card-description">
+            <h3>{{postagem.titulo}}</h3>
+            <p>{{postagem.conteudo}} </p>
+          </div>
+        </div>
+
+        <div id="comments-section">
+          Comments Section
+        </div>
+      </section>
+
+      <aside id="sidebar">
+        <h3>Sidebar Heading</h3>
+        <p>Sidebar 1</p>
+      </aside>
     </div>
-</div>
+  </main>

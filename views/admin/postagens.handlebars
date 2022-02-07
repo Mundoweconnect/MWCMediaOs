@@ -1,20 +1,34 @@
-<h4 class="center">Lista de Livros</h4>
-<br>
-<a href="/admin/postagens/add"><button class="btn btn-success">Novo Livro</button></a>
-
-{{#each postagens}}
-<div class="card">
-    <div class="card-body">
-        <img src="{{url}}" alt="">
-        <h4>{{titulo}}</h4>
-        <h4>{{url}}</h4>
-        <h4>Descrição:{{descricao}}</h4>
-        <small>Data: {{data}}</small><br>
-        <small>categoria: {{categoria.nome}}</small><br>
-        <a href="/admin/postagens/edit/{{_id}}"><button class="btn btn-success mt-4">Editar </button></a>
-        <a href="/admin/postagens/deletar/{{_id}}"><button class="btn btn-danger mt-4">Deletar </button></a>
+<div class="container">
+    <h4 class="center">Lista de Livros</h4>
+    <br>
+    <a href="/admin/postagens/add"><button class="btn btn-success">Novo Livro</button></a>
+   <div class="section"> 
+    <div class="row">
+    {{#each postagens}}
+   
+        <div class="col s12 m4 l4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="/imagem/book-1283865_1280.jpg">
+                    <span class="card-title">Título: {{titulo}}</span>
+                </div>
+                <div class="card-content">
+                    <small>categoria: {{categoria.nome}}</small><br>
+                    <p>Descrição: {{descricao}}</p>
+                    <small>Data: {{createdAt}}</small><br>
+                    
+                </div>
+                <div class="card-action">
+                    <a href="{{url}}">Ler</a>
+                    <a href="/admin/postagens/edit/{{_id}}"><button class="btn btn-success mt-4">Editar </button></a>
+                    <a href="/admin/postagens/deletar/{{_id}}"><button class="btn btn-danger mt-4">Deletar </button></a>
+                </div>
+            </div>
+        </div>
+     
+    {{else}}
+    <p>Nenhum livro registrada!</p>
+    {{/each}}
+    </div>
     </div>
 </div>
-{{else}}
-<p>Nenhum livro registrada!</p>
-{{/each}}

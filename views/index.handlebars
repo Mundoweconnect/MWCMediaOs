@@ -1,40 +1,34 @@
-<div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-        <div class="container">
-            <br><br>
-            <h1 class="header center teal-text text-lighten-2">Seja bem vindo a bibioteca</h1>
-            <div class="row center">
-                <h5 class="header col s12 light">Senta-se avontade para aprender</h5>
-            </div>
-        </div>
-    </div>
-    <div class="parallax"><img src="/imagem/library-979896_1920.jpg" alt="Unsplashed background img 1"></div>
+<div id="banner">
+  <h1>&lt;MWC MIDIA/&gt;</h1>
+  <h3>Nós mudamos o mundo!</h3>
 </div>
 
-<div class="container">
-    <div class="section">
+<main>
+  <a href="blogslist.html">
+    <h2 class="section-heading">Todas Noticias</h2>
+  </a>
 
-        <!--   Icon Section   -->
-        <div class="row">
-            {{#each postagens}}
-            <div class="col s12 m4 l4">
-                <div class="card small">
-                    <div class="card-image">
-                        <img src="/imagem/book-1283865_1280.jpg">
-                        <span class="card-title">{{titulo}}</span>
-                    </div>
-                    <div class="card-content">
-                        <p>{{descricao}}</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="{{url}}">Ler</a>
-                    </div>
-                </div>
-            </div>
-            {{else}}
-            <p>Nenhum Livro</p>
-            {{/each}}
+  <section>
+    {{#each postagens}}
+      <div class="card">
+        <div class="card-image">
+          <a href="/postagem/{{slug}}">
+            <img src={{url}} alt="Card Image" />
+          </a>
         </div>
 
-    </div>
-</div>
+        <div class="card-description">
+          <a href="/postagem/{{slug}}">
+            <h3>{{titulo}}</h3>
+          </a>
+          <p>
+            {{descricao}}
+          </p>
+          <a href="/postagem/{{slug}}" class="btn-readmore">Leia mais</a>
+        </div>
+      </div>
+    {{else}}
+      <p>Nenhum Conteúdo Disponível</p>
+    {{/each}}
+  </section>
+</main>

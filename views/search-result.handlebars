@@ -1,0 +1,43 @@
+
+{{# if noMatch}}
+<div class="container">
+    <h4>Livro não encontrado!. Tente novamente</h4>
+ <div class="col s12 m8 l10">
+    <form action="/pesquisar" method="GET">
+    <input class="form-control"
+        type="text"
+        name="q"
+        required
+        placeholder="busca por livros..."
+    />
+    </form> 
+</div>
+</div>
+
+{{else}}
+<div class="container">
+    <h4>Resultado da pesquisa:</h4>
+    <div class="section">
+        <!--   Icon Section   -->
+        <div class="row">
+            {{#each result}}
+            <div class="col s12 m4 l4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src={{url}}>
+                        <span class="card-title">Título: {{titulo}}</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Descrição: {{descricao}}</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="/postagem/{{slug}}">Ler</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+    </div>
+</div>
+{{/if}}

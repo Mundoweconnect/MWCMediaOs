@@ -1,21 +1,28 @@
-<div class="container">
-    <h4 class="center">Lista de categorias</h4>
-    <br>
-    <a href="/admin/categorias/add"><button class="btn btn-success">Nova Categoria</button></a>
+<main>
+  <h2 class="page-heading">Lista de categorias</h2>
+  <br />
+  <a class="btn-readmore" href="/admin/categorias/add">Nova Categoria </a>
+  <section>
     {{#each categorias}}
-    <div class="card">
-        <div class="card-body">
-            <h4>{{nome}}</h4>
-            <small>Slug: {{slug}}</small><br>
-            <a href="/admin/categorias/edit/{{_id}}"><button class="btn btn-success mt-2">Editar Categoria</button></a>
-            <hr/>
+      <div class="card">
+        <div class="card-description">
+          <h3>{{nome}}</h3>
+          <div class="card-meta">
+            <small>Slug: {{slug}}</small><br />
+            <a class="btn-readmore" href="/admin/categorias/edit/{{_id}}">Editar
+              Categoria
+            </a>
+            <br />
             <form action="/admin/categorias/deletar" method="POST">
-                <input type="hidden" name="id" value="{{_id}}">
-                <button type="submit" class="btn btn-danger mt-3">Deletar Categoria</button>
+              <input type="hidden" name="id" value="{{_id}}" />
+              <button type="submit" class="btn-readmore">Apagar Categoria</button>
             </form>
+          </div>
         </div>
-    </div>
+      </div>
     {{else}}
-    <h4 class="mt-3">Nenhuma Categoria registrada!</h4>
+      <h4 class="mt-3">Nenhuma Categoria registrada!</h4>
     {{/each}}
-</div>
+
+  </section>
+</main>

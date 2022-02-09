@@ -1,7 +1,25 @@
-<div class="container"> 
-    <h4>categorias:</h4>
+<main>
+  <h2 class="page-heading">Categorias</h2>
+
+  <section>
     {{#each categorias}}
-        <a href="/categorias/{{slug}}"><h4>{{nome}}</h4></a>
+
+      <div class="card">
+        <div class="card-image">
+          <a href="/categorias/{{slug}}">
+            <img src="img/6.jpg" alt="Card Image" />
+          </a>
+        </div>
+
+        <div class="card-description">
+          <a href="/categorias/{{slug}}">
+            <h3>{{nome}}</h3>
+          </a>
+        </div>
+      </div>
     {{else}}
     {{/each}}
-</div>
+
+  </section>
+
+</main>

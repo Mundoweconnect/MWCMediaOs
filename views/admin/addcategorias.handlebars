@@ -1,15 +1,26 @@
 <div class="container">
-    {{#each erros}}
+  {{#each erros}}
     <dvi class="alert alert-danger form-control">{{texto}}</dvi>
-    {{else}}
-    {{/each}}
-    <h4 class="center">Nova Categoria</h4>
-    <div class="card">
-        <div class="card-body">
-            <form action="/admin/categorias/nova" method="POST">
-                <input type="text" name="nome" placeholder="Categoria" class="form-control">
-                <button type="submit" class="btn btn-success ">Criar Categoria</button>
-            </form>
+  {{else}}
+  {{/each}}
+
+  <div class="main-container">
+    <div class="main-wrapper">
+      <h2>Nova Categoria</h2>
+      <form class="signup-form" action="/admin/categorias/nova" method="POST">
+        <input
+          type="text"
+          name="nome"
+          placeholder="Categoria"
+          class="form-control"
+        />
+        <div class="btn-options">
+          <a href="/admin/categorias" class="btn-readmore">
+            Cancelar
+          </a>
+          <button type="submit" class="btn btn-success">Criar Categoria</button>
         </div>
+      </form>
     </div>
+  </div>
 </div>

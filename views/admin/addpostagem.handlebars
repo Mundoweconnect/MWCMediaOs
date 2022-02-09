@@ -1,25 +1,49 @@
-<div class="container">
-    {{#each erros}}
+<main>
+  {{#each erros}}
     <div class="alert alert-danger">{{texto}}</div>
-    {{else}}
-    {{/each}}
-    <h5 class="center ">Add Novo livro</h5>
-    <div class="card">
-        <div class="card-body">
-            <form action="/admin/postagens/nova" method="POST" enctype="multipart/form-data">
-                <input type="text" name="titulo" placeholder="Titulo da postagem" class="form-control" required>
-                <input type="text" name="descricao" placeholder="Descrição da postagem" class="form-control" required>
-                <h6>Selecione a categoria</h6>
-                <select name="categoria" class="custom-select mt-2">
-                    {{#each categorias}}
-                    <option value="{{_id}}">{{nome}}</option>
-                    {{else}}
-                    <option value="0">Nenhuma categoria registrada</option>
-                    {{/each}}
-                </select>
-                <input type="file" name="file" id="arquivo" required />
-                <button type="submit" class="btn btn-success mt-4">publucar</button>
-            </form>
+  {{else}}
+  {{/each}}
+
+  <div class="main-container">
+    <div class="main-wrapper">
+      <h2>Add Novo Post</h2>
+      <form
+        class="signup-form"
+        action="/admin/postagens/nova"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <input
+          type="text"
+          name="titulo"
+          placeholder="Titulo da postagem"
+          class="form-control"
+          required
+        />
+        <textarea
+          name="descricao"
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Conteúdo da Postagem"
+          required
+        ></textarea>
+        <select name="categoria" class="custom-select mt-2">
+          <option disabled>Selecione a categoria</option>
+          {{#each categorias}}
+            <option value="{{_id}}">{{nome}}</option>
+          {{else}}
+            <option value="0">Nenhuma categoria registrada</option>
+          {{/each}}
+        </select>
+        <input type="file" name="file" id="arquivo" required />
+        <div class="btn-options">
+          <a href="/admin/postagens" class="btn-readmore">
+            Cancelar
+          </a>
+          <button type="submit" class="btn btn-success mt-4">publucar</button>
         </div>
+      </form>
     </div>
-</div>
+  </div>
+</main>

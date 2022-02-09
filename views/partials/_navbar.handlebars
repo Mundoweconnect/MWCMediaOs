@@ -6,12 +6,12 @@
     <li>
       <a href="/categorias">Categorias</a>
     </li>
-    <li>
+    <!--<li>
       <a href="blogslist.html">Projects</a>
     </li>
     <li>
       <a href="about.html">About</a>
-    </li>
+    </li>  -->
     {{#if user}}
 
       <li><a href="/usuarios/logout">Sair</a></li>
@@ -23,7 +23,13 @@
     {{/if}}
     <li>
       <form action="/pesquisar" method="GET">
-        <input type="text" name="q" required placeholder="Pesquisar" />
+        <input
+          class="searchbox"
+          type="text"
+          name="q"
+          required
+          placeholder="Pesquisar"
+        />
       </form>
     </li>
   </ul>
@@ -45,12 +51,13 @@
     <li>
       <a href="/categorias">Categorias</a>
     </li>
-    <li>
+    <!--<li>
       <a href="blogslist.html">Projects</a>
     </li>
     <li>
       <a href="about.html">About</a>
     </li>
+  -->
     {{#if user}}
       <li><a href="/admin">Olá, {{user.nome}} </a></li>
       <li><a href="/usuarios/logout">Sair</a></li>
@@ -68,6 +75,12 @@
 
 <div id="searchbox">
   <form action="/pesquisar" method="GET">
-    <input type="text" name="q" required placeholder="busca por livros..." />
+    <input
+      class="searchbox"
+      type="text"
+      name="q"
+      required
+      placeholder="busca por livros..."
+    />
   </form>
 </div>

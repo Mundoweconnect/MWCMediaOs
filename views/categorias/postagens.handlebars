@@ -1,28 +1,33 @@
-<div class="container">
-    <h5>categorias: {{categoria.nome}}</h5>
-    <div class="section">
+<main>
+  <h2 class="page-heading">{{categoria.nome}}</h2>
 
-        <!--   Icon Section   -->
-        <div class="row">
-            {{#each postagens}}
-            <div class="col s4 m4">
-                <div class="card small">
-                    <div class="card-image">
-                        <img src={{url}}>
-                        <span class="card-title">{{titulo}}</span>
-                    </div>
-                    <div class="card-content">
-                        <p>{{descricao}}</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="/postagem/{{slug}}">Ler</a>
-                    </div>
-                </div>
-            </div>
-            {{else}}
-            <p>Nenhum Livro</p>
-            {{/each}}
+  <section>
+
+    {{#each postagens}}
+      <div class="card">
+        <div class="card-image">
+          <a href="/postagem/{{slug}}">
+            <img src="{{url}}" alt="Card Image" />
+          </a>
         </div>
 
-    </div>
-</div>
+        <div class="card-description">
+          <a href="/postagem/{{slug}}">
+            <h3>{{titulo}}</h3>
+          </a>
+          <div class="card-meta">
+            Posted by Admin on 23/01/2018 in
+            <a href="#">Web Dev</a>
+          </div>
+          <p>
+            {{descricao}}
+          </p>
+          <a href="/postagem/{{slug}}" class="btn-readmore">Ler Mais</a>
+        </div>
+      </div>
+    {{else}}
+      <p>Não encontrei nada!</p>
+    {{/each}}
+  </section>
+
+</main>

@@ -1,14 +1,31 @@
-<div class="col s12 m8 container">
-    <div class="main-container">
+<main>
 
-        <div class="main-wrapper">
-              <h2>Faça seu Login</h2>
-            <form class="signup-form" action="/usuarios/login" method="POST">
-                <input type="email" name="email" placeholder="E-mail" required class="form-control">
-                <input type="password" name="senha" placeholder="Senha" class="form-control">
-                <button type="submit" class="btn btn-success">Login</button>
-            </form>
-        </div>
+  <div class="main-container">
 
+    <div class="main-wrapper">
+      <h2>Faça seu Login</h2>
+      <form class="signup-form" action="/usuarios/login" method="POST">
+        <input
+          type="email"
+          name="email"
+          placeholder="E-mail"
+          required
+          class="form-control"
+        />
+        <input
+          type="password"
+          name="senha"
+          placeholder="Senha"
+          class="form-control"
+        />
+        <button type="submit" class="btn btn-success">Login</button>
+      </form>
+      {{#each erros}}
+        <div class="alert alert-danger form-control mt-2">{{texto}}</div>
+      {{else}}
+      {{/each}}
     </div>
-</div>
+
+  </div>
+
+</main>
